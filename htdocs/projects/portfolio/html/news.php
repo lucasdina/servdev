@@ -13,6 +13,24 @@
     </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        function validate(idArray, msgId) {
+            var isValid = true;
+            idArray.forEach(function(element){
+                if(document.getElementById(element).value === ""){
+                    isValid = false;
+                }
+            });
+            if(!isValid){
+                document.getElementById(msgId).style.display = 'block';
+            }
+            else{
+                document.getElementById(msgId).style.display = 'none';
+            }
+            return isValid;
+
+        }
+    </script>
 </head>
 
 <body>
@@ -31,7 +49,7 @@
             <h1>Sign up for our weekly email <br>and we'll fill your inbox with spam!</h1>
             <br>
             <div class="container" style="margin-top: 10px;">
-                <form action="thankYouNews.php" method="post" onsubmit="">
+                <form action="thankYouNews.php" method="post" onsubmit="return validate(['fname', 'lname', 'email'], 'errorMsg')">
                     <div class="form-group row">
                         <label for="fname" class="col-sm-2 col-form-label">First Name</label>
                         <div class="col-sm-10">
@@ -58,7 +76,7 @@
                         </div>
                     </div>
                 </form>
-                <form action="sorryToSeeYouGo.php" method="post">
+                <form action="sorryToSeeYouGo.php" method="post" onsubmit="return validate(['fname', 'lname', 'email'], 'errorMsgUnSub')">
                     <h2>I hate everything and would like to unsubscribe!<br>
                     Enter your email to unsubscribe.</h2>
                     <div class="col-sm-10">
@@ -67,7 +85,7 @@
                     <div class="form-group row" style="margin-top: 10px">
                         <div class="offset-sm-2 col-sm-10">
                             <button type="submit" class="btn" style="color: #5CB85C"><a>Unsubscribe</a></button>
-                            <h5 id="errorMsg" style="color: red; display: none;">All fields must be filled and valid.</h5>
+                            <h5 id="errorMsgUnSub" style="color: red; display: none;">All fields must be filled and valid.</h5>
                         </div>
                     </div>
                 </form>
