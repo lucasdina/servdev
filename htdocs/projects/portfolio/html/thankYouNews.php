@@ -14,23 +14,20 @@
     $lname = $_POST['lname'];
     $email = $_POST['email'];
 
-    $link = mysql_connect('localhost', 'projectone_admin', '1qazxsw2');
-    if(!$link){
-        die('Not connected : '.mysql_error());
+    $servername = 'localhost';
+    $username = 'projectone_admin';
+    $passwd = '1qazxsw2';
+    $dbname = 'project1';
+
+    $link = mysqli_connect($servername, $username, $passwd, $dbname);
+    if($link->connect_error){
+        die('Not connected : '.$link->connect_error);
     }
 
-    $db_selected = mysql_select_db('project1', $link);
-    if(!$db_selected){
-        die('Can\'t find project1: '.mysql_error());
-    }
+    $query = "INSERT INTO newslettersubscribers (fname, lname, email) VALUES ('$fname', '$lname', '$email')";
+    $response = $link->query($query);
 
-    $query = sprintf("INSERT INTO newslettersubscribers (fname, lname, email) VALUES ('%s', '%s', '%s')",
-        mysql_real_escape_string($fname),
-        mysql_real_escape_string($lname),
-        mysql_real_escape_string($email));
-
-    $result = mysql_query($query);
-    if (!$result){
+    if (!$response){
         $message = 'Invalid query: '. mysql_error(). '/n';
         $message .= 'Whole query: '. $query;
         die($message);

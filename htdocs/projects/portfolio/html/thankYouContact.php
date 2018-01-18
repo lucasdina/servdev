@@ -15,26 +15,27 @@
     $org = $_POST['org'];
     $message = $_POST['message'];
 
-    $link = mysql_connect('localhost', 'projectone_admin', '1qazxsw2');
-    if(!$link){
-        die('Not connected : '.mysql_error());
+    $servername = 'localhost';
+    $username = 'projectone_admin';
+    $passwd = '1qazxsw2';
+    $dbname = 'project1';
+
+    $link = mysqli_connect($servername, $username, $passwd, $dbname);
+    if($link->connect_error){
+        die('Not connected : '.$link->connect_error);
+    }
+    $query = "INSERT INTO feedbackrequests (userEmail, userOrganization, message) VALUES('$email','$org','$message')";
+    $result = $link->query($query);
+
+    $csrequest = "SELECT * FROM servicespecialists ORDER BY rand() LIMIT 1";
+    $response = $link ->query($csrequest);
+    $csspecialist = 'Lucas Dina';
+    if($response->num_rows >0){
+        while($row = $response->fetch_assoc()){
+            $csspecialist = $row['fname'].' '.$row['lname'];
+        }
     }
 
-    $db_selected = mysql_select_db('project1', $link);
-    if(!$db_selected){
-        die('Can\'t find project1: '.mysql_error());
-    }
-
-    $query = sprintf("INSERT INTO feedbackrequests (userEmail, userOrganization, message) VALUES ('%s', '%s', '%s')",
-        mysql_real_escape_string($email),
-        mysql_real_escape_string($org),
-        mysql_real_escape_string($message));
-    $result = mysql_query($query);
-    if (!$result){
-        $message = 'Invalid query: '. mysql_error(). '/n';
-        $message .= 'Whole query: '. $query;
-        die($message);
-    }
     ?>
 </head>
 
@@ -52,7 +53,7 @@
 </div>
 <main>
     <div id="mainText">
-        <h1>Thank you for your message! <?php //Some random customer service specialist. ?> will get back to you shortly</h1>
+        <h1>Thank you for your message! <?php echo $csspecialist?> will get back to you shortly</h1>
     </div>
 </main>
 </body>

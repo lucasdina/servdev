@@ -13,20 +13,28 @@
     <?php
     $email = $_POST['email'];
 
-    $link = mysql_connect('localhost', 'projectone_admin', '1qazxsw2');
-    if(!$link){
-        die('Not connected : '.mysql_error());
+    $servername = 'localhost';
+    $username = 'projectone_admin';
+    $passwd = '1qazxsw2';
+    $dbname = 'project1';
+
+    $link = mysqli_connect($servername, $username, $passwd, $dbname);
+    if($link->connect_error){
+        die('Not connected : '.$link->connect_error);
     }
 
-    $db_selected = mysql_select_db('project1', $link);
-    if(!$db_selected){
-        die('Can\'t find project1: '.mysql_error());
+    $subName = null;
+    $query0 = "SELECT fname FROM newslettersubscribers WHERE email = '$email'";
+    $response = $link ->query($query0);
+    if($response->num_rows >0){
+        while($row = $response->fetch_assoc()){
+            $subName = $row['fname'];
+        }
     }
 
-    $query = sprintf("DELETE FROM newslettersubscribers WHERE email = '$s'",
-        mysql_real_escape_string($email));
-    $result = mysql_query($query);
-    if (!$result){
+    $query = "DELETE * FROM newslettersubscribers WHERE email = '$email'";
+    $response0 = $link ->query($query);
+    if (!$response){
         $message = 'Invalid query: '. mysql_error(). '/n';
         $message .= 'Whole query: '. $query;
         die($message);
@@ -49,7 +57,7 @@
 <main>
     <div id="mainText">
         <h1>If you didn't like our news letter, we don't like you. <br>
-        Have fun with your miserable life.</h1>
+        Have fun with your miserable life, <?php echo $subName?>.</h1>
     </div>
 </main>
 </body>
