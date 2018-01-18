@@ -18,10 +18,10 @@
     <img id="logo" src="./images/logo.png" alt="logo" style="width: 100px;height: 100px;" />
     <div class="nav">
         <ul>
-            <li class="home"><a href="index.html">Portfolio</a></li>
-            <li class="about"><a href="html/about.html">Resume</a></li>
-            <li class="contact"><a href="html/contact.html">Contact</a></li>
-            <li class="news"><a href="html/news.html">News</a></li>
+            <li class="home"><a href="index.php">Portfolio</a></li>
+            <li class="about"><a href="html/about.php">Resume</a></li>
+            <li class="contact"><a href="html/contact.php">Contact</a></li>
+            <li class="news"><a href="html/news.php">News</a></li>
         </ul>
     </div>
     <main>

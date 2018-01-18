@@ -16,16 +16,16 @@
             <img id="logo" src="../images/logo.png" alt="logo" style="width: 100px;height: 100px;" />
         <div class="nav" id="mainNav">
             <ul>
-                <li class="home"><a href="../index.html">Home</a></li>
-                <li class="about"><a href="about.html">About</a></li>
-                <li class="contact"><a href="contact.html">Contact</a></li>
-                <li class="news"><a href="news.html">News</a></li>
+                <li class="home"><a href="../index.php">Home</a></li>
+                <li class="about"><a href="about.php">About</a></li>
+                <li class="contact"><a href="contact.php">Contact</a></li>
+                <li class="news"><a href="news.php">News</a></li>
             </ul>
         </div>
         <div class="nav" id="loginNav">
             <ul>
-                <li class="signIn"><a href="signin.html">Sign In</a></li>
-                <li class="signUp"><a href="signup.html">Sign Up</a></li>
+                <li class="signIn"><a href="signin.php">Sign In</a></li>
+                <li class="signUp"><a href="signup.php">Sign Up</a></li>
             </ul>
         </div>
         </header>

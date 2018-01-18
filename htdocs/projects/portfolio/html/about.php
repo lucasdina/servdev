@@ -18,18 +18,17 @@
             <img id="logo" src="../images/logo.png" alt="logo" style="width: 100px;height: 100px;" />
             <div class="nav">
                 <ul>
-                    <li class="home"><a href="../index.html">Portfilio</a></li>
-                    <li class="about"><a href="about.html">Resume</a></li>
-                    <li class="contact"><a href="contact.html">Contact</a></li>
-
-                    <li class="news"><a href="news.html">News</a></li>
+                    <li class="home"><a href="../index.php">Portfilio</a></li>
+                    <li class="about"><a href="about.php">Resume</a></li>
+                    <li class="contact"><a href="contact.php">Contact</a></li>
+                    <li class="news"><a href="news.php">News</a></li>
                 </ul>
             </div>
         <main>
             <div id="mainText">
                 <object data="../images/portfolio.pdf" type="application/pdf" width="100%" height="800px"> 
   <p>It appears you don't have a PDF plugin for this browser.
-   No biggie... you can <a href="resume.pdf">click here to
+   No biggie... you can <a href="../images/portfolio.pdf">click here to
   download the PDF file.</a></p>  
  </object>
             </div>
