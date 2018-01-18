@@ -38,13 +38,13 @@
                         <div class="form-group row">
                             <label for="org" class="col-sm-2 col-form-label">Organization</label>
                             <div class="col-sm-10">
-                                <input type="input" class="form-control" name="org" id="org" placeholder="Organization">
+                                <input type="text" class="form-control" name="org" id="org" placeholder="Organization">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="message" class="col-sm-2 col-form-label">Regarding</label>
                             <div class="col-sm-10">
-                                <input type="input" class="form-control" name="message" id="message" placeholder="Comments">
+                                <input type="text" class="form-control" name="message" id="message" placeholder="Comments">
                             </div>
                         </div>
                         <div class="form-group row">

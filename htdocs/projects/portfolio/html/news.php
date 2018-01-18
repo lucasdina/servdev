@@ -3,8 +3,11 @@
 <html>
 <head>
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+            integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+            crossorigin="anonymous"></script>
     <title>
         Jukebox
     </title>
@@ -14,7 +17,7 @@
 
 <body>
 <div id="container">
-    <img id="logo" src="../images/logo.png" alt="logo" style="width: 100px;height: 100px;" />
+    <img id="logo" src="../images/logo.png" alt="logo" style="width: 100px;height: 100px;"/>
     <div class="nav">
         <ul>
             <li class="home"><a href="../index.php">Portfilio</a></li>
@@ -25,31 +28,44 @@
     </div>
     <main>
         <div id="mainText">
-            <h1>Send me an email and I will <br>get back to you as soon as possible.</h1>
+            <h1>Sign up for our weekly email <br>and we'll fill your inbox with spam!</h1>
             <br>
             <div class="container" style="margin-top: 10px;">
                 <form action="thankYouNews.php" method="post">
                     <div class="form-group row">
                         <label for="fname" class="col-sm-2 col-form-label">First Name</label>
                         <div class="col-sm-10">
-                            <input type="email" class="form-control" id="fname" placeholder="John">
+                            <input type="text" class="form-control" name="fname" id="fname" placeholder="John">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="lname" class="col-sm-2 col-form-label">Last Name</label>
                         <div class="col-sm-10">
-                            <input type="input" class="form-control" id="lname" placeholder="Doe">
+                            <input type="text" class="form-control" name="lname" id="lname" placeholder="Doe">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="email" class="col-sm-2 col-form-label">Email</label>
                         <div class="col-sm-10">
-                            <input type="input" class="form-control" id="email" placeholder="john.doe@example.com">
+                            <input type="text" class="form-control" name="email" id="email"
+                                   placeholder="john.doe@example.com">
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="offset-sm-2 col-sm-10">
-                            <button type="submit" class="btn" style="color: #5CB85C"><a href="thankYouContact.html">Submit</a></button>
+                            <button type="submit" class="btn" style="color: #5CB85C"><a>Submit</a></button>
+                        </div>
+                    </div>
+                </form>
+                <form action="sorryToSeeYouGo.php" method="post">
+                    <h2>I hate everything and would like to unsubscribe!<br>
+                    Enter your email to unsubscribe.</h2>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="email" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group row" style="margin-top: 10px">
+                        <div class="offset-sm-2 col-sm-10">
+                            <button type="submit" class="btn" style="color: #5CB85C"><a>Unsubscribe</a></button>
                         </div>
                     </div>
                 </form>
