@@ -14,6 +14,27 @@
     $email = $_POST['email'];
     $org = $_POST['org'];
     $message = $_POST['message'];
+
+    $link = mysql_connect('localhost', 'projectone_admin', '1qazxsw2');
+    if(!$link){
+        die('Not connected : '.mysql_error());
+    }
+
+    $db_selected = mysql_select_db('project1', $link);
+    if(!$db_selected){
+        die('Can\'t find project1: '.mysql_error());
+    }
+
+    $query = sprintf("INSERT INTO feedbackrequests (userEmail, userOrganization, message) VALUES ('%s', '%s', '%s')",
+        mysql_real_escape_string($email),
+        mysql_real_escape_string($org),
+        mysql_real_escape_string($message));
+    $result = mysql_query($query);
+    if (!$result){
+        $message = 'Invalid query: '. mysql_error(). '/n';
+        $message .= 'Whole query: '. $query;
+        die($message);
+    }
     ?>
 </head>
 
@@ -26,6 +47,7 @@
         <li class="home"><a href="../index.php">Portfolio</a></li>
         <li class="about"><a href="about.php">Resume</a></li>
         <li class="contact"><a href="contact.php">Contact</a></li>
+        <li class="news"><a href="news.php">News</a></li>
     </ul>
 </div>
 <main>

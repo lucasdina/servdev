@@ -32,24 +32,24 @@
                         <div class="form-group row">
                             <label for="email" class="col-sm-2 col-form-label">Email</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="email" placeholder="Email">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Email">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="org" class="col-sm-2 col-form-label">Organization</label>
                             <div class="col-sm-10">
-                                <input type="input" class="form-control" id="org" placeholder="Organization">
+                                <input type="input" class="form-control" name="org" id="org" placeholder="Organization">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="message" class="col-sm-2 col-form-label">Regarding</label>
                             <div class="col-sm-10">
-                                <input type="input" class="form-control" id="message" placeholder="Comments">
+                                <input type="input" class="form-control" name="message" id="message" placeholder="Comments">
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="offset-sm-2 col-sm-10">
-                                <button type="submit" class="btn" style="color: #5CB85C"><a href="thankYouContact.html">Submit</a></button>
+                                <button type="submit" class="btn" style="color: #5CB85C"><a>Submit</a></button>
                             </div>
                         </div>
                     </form>
