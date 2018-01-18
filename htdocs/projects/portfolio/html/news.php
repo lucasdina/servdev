@@ -31,7 +31,7 @@
             <h1>Sign up for our weekly email <br>and we'll fill your inbox with spam!</h1>
             <br>
             <div class="container" style="margin-top: 10px;">
-                <form action="thankYouNews.php" method="post">
+                <form action="thankYouNews.php" method="post" onsubmit="">
                     <div class="form-group row">
                         <label for="fname" class="col-sm-2 col-form-label">First Name</label>
                         <div class="col-sm-10">
@@ -54,6 +54,7 @@
                     <div class="form-group row">
                         <div class="offset-sm-2 col-sm-10">
                             <button type="submit" class="btn" style="color: #5CB85C"><a>Submit</a></button>
+                            <h5 id="errorMsg" style="color: red; display: none;">All fields must be filled and valid.</h5>
                         </div>
                     </div>
                 </form>
@@ -66,6 +67,7 @@
                     <div class="form-group row" style="margin-top: 10px">
                         <div class="offset-sm-2 col-sm-10">
                             <button type="submit" class="btn" style="color: #5CB85C"><a>Unsubscribe</a></button>
+                            <h5 id="errorMsg" style="color: red; display: none;">All fields must be filled and valid.</h5>
                         </div>
                     </div>
                 </form>
