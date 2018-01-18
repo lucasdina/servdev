@@ -16,9 +16,13 @@
     } else if ( $interest_rate === FALSE )  {
         $error_message = 'Interest rate must be a valid number.'; 
     } else if ( $interest_rate <= 0 ) {
-        $error_message = 'Interest rate must be greater than zero.'; 
+        $error_message = 'Interest rate must be greater than zero.';
+    }
+    else if ($interest_rate > 15){
+        $error_message = 'Interest rate must be less than or equal to 15.';
+    }
     // validate years
-    } else if ( $years === FALSE ) {
+     else if ( $years === FALSE ) {
         $error_message = 'Years must be a valid whole number.';
     } else if ( $years <= 0 ) {
         $error_message = 'Years must be greater than zero.';
@@ -40,7 +44,7 @@
         $future_value = 
             $future_value + ($future_value * $interest_rate * .01); 
     }
-
+    date_default_timezone_set("America/Denver");
     // apply currency and percent formatting
     $investment_f = '$'.number_format($investment, 2);
     $yearly_rate_f = $interest_rate.'%';
@@ -66,7 +70,9 @@
         <span><?php echo $years; ?></span><br>
 
         <label>Future Value:</label>
-        <span><?php echo $future_value_f; ?></span><br>
+        <span><?php echo $future_value_f; ?></span><br><br>
+
+        This calculation was done on <?php echo date("m/d/Y"); ?>
     </main>
 </body>
 </html>
