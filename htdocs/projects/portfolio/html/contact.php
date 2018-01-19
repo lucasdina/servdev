@@ -21,6 +21,7 @@
                     isValid = false;
                 }
             });
+
             if(!isValid){
                 document.getElementById('errorMsg').style.display = 'block';
             }
