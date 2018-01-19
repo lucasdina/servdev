@@ -1,0 +1,30 @@
+CREATE DATABASE project1;
+CREATE TABLE feedbackrequests (
+	ID int NOT NULL AUTO_INCREMENT,
+	userEmail  text, 
+	userOrganization text,
+	message text,
+	PRIMARY KEY (ID)	
+);
+CREATE TABLE newslettersubscribers(
+	ID int NOT NULL AUTO_INCREMENT,
+	fname text, 
+	lname text, 
+	email text,
+	PRIMARY KEY (ID)
+);
+CREATE TABLE servicespecialists(
+	ID int NOT NULL AUTO_INCREMENT,
+	fname text, 
+	lname text,
+	PRIMARY KEY (ID)
+);
+
+INSERT INTO feedbackrequests(userEmail, userOrganization, message)
+	VALUES ('email1@email.com', 'organization1', 'message1'), ('email2@email.com', 'organization2', 'message2'), ('email3@email.com', 'organization3', 'message3'), ('email4@email.com', 'organization4', 'message4'), ('email5@email.com', 'organization5', 'message5'), ('email6@email.com', 'organization6', 'message6'), ('email7@email.com', 'organization7', 'message7'), ('email8@email.com', 'organization8', 'message8'), ('email9@email.com', 'organization9', 'message9'), ('email10@email.com', 'organization10', 'message10'), ('email11@email.com', 'organization11', 'message11'), ('email12@email.com', 'organization12', 'message12'), ('email13@email.com', 'organization13', 'message13'), ('email14@email.com', 'organization14', 'message14'), ('email15@email.com', 'organization15', 'message15'), ('email16@email.com', 'organization16', 'message16'), ('email17@email.com', 'organization17', 'message17'), ('email18@email.com', 'organization18', 'message18'), ('email19@email.com', 'organization19', 'message19'), ('email20@email.com', 'organization20', 'message20');
+
+INSERT INTO newslettersubscribers (fname, lname, email)
+	VALUES ('fname1', 'lname1', 'email1@email.com'), ('fname2', 'lname2', 'email2@email.com'), ('fname3', 'lname3', 'email3@email.com'), ('fname4', 'lname4', 'email4@email.com'), ('fname5', 'lname5', 'email5@email.com'), ('fname6', 'lname6', 'email6@email.com'), ('fname7', 'lname7', 'email7@email.com'), ('fname8', 'lname8', 'email8@email.com'), ('fname9', 'lname9', 'email9@email.com'), ('fname10', 'lname10', 'email10@email.com'), ('fname11', 'lname11', 'email11@email.com'), ('fname12', 'lname12', 'email12@email.com'), ('fname13', 'lname13', 'email13@email.com'), ('fname14', 'lname14', 'email14@email.com'), ('fname15', 'lname15', 'email15@email.com'), ('fname16', 'lname16', 'email16@email.com'), ('fname17', 'lname17', 'email17@email.com'), ('fname18', 'lname18', 'email18@email.com'), ('fname19', 'lname19', 'email19@email.com'), ('fname20', 'lname20', 'email20@email.com');
+
+INSERT INTO servicespecialists (fname, lname)
+	VALUES ('fname1', 'lname1'), ('fname2', 'lname2'), ('fname3', 'lname3'), ('fname4', 'lname4'), ('fname5', 'lname5'), ('fname6', 'lname6'), ('fname7', 'lname7'), ('fname8', 'lname8'), ('fname9', 'lname9'), ('fname10', 'lname10'), ('fname11', 'lname11'), ('fname12', 'lname12'), ('fname13', 'lname13'), ('fname14', 'lname14'), ('fname15', 'lname15'), ('fname16', 'lname16'), ('fname17', 'lname17'), ('fname18', 'lname18'), ('fname19', 'lname19'), ('fname20', 'lname20');
