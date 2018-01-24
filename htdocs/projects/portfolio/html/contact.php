@@ -21,13 +21,7 @@
                     isValid = false;
                 }
             });
-            var i = 1;
-            var out = "";
-            while (i<21){
-                out += '(\'fname'+i+'\', \'lname'+i+'\'), ';
-                i++;
-            }
-            console.log(out);
+
             if(!isValid){
                 document.getElementById('errorMsg').style.display = 'block';
             }

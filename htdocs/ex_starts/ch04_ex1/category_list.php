@@ -15,7 +15,7 @@ $statement->closeCursor();
 <!-- the head section -->
 <head>
     <title>My Guitar Shop</title>
-    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="main.css"/>
 </head>
 
 <!-- the body section -->
@@ -27,23 +27,38 @@ $statement->closeCursor();
         <tr>
             <th>Name</th>
             <th>&nbsp;</th>
+
         </tr>
-        
-        <!-- add code for the rest of the table here -->
-    
+        <?php foreach ($categories as $category) : ?>
+            <tr>
+                <th><a href=".?category_id=<?php echo $category['categoryID']; ?>">
+                        <?php echo $category['categoryName']; ?>
+                    </a>
+                </th>
+                <th><form action="category_delete.php" method="post">
+                        <input type="hidden" name="id" value="<?php echo $category['categoryID']?>" />
+                        <input type="submit" value="Delete" text="Delete" name="Delete">
+                    </form>
+                </th>
+            </tr>
+        <?php endforeach; ?>
     </table>
 
     <h2>Add Category</h2>
-    
-    <!-- add code for the form here -->
-    
+    <form action="category_add.php" method="post">
+        <!-- add code for the form here -->
+        <label>Category Name:</label>
+        <input type="text" name="name">
+        <input type="submit" value="Add Category"><br>
+    </form>
+
     <br>
     <p><a href="index.php">List Products</a></p>
 
-    </main>
+</main>
 
-    <footer>
-        <p>&copy; <?php echo date("Y"); ?> My Guitar Shop, Inc.</p>
-    </footer>
+<footer>
+    <p>&copy; <?php echo date("Y"); ?> My Guitar Shop, Inc.</p>
+</footer>
 </body>
 </html>

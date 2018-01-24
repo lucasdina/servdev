@@ -76,7 +76,7 @@
                         </div>
                     </div>
                 </form>
-                <form action="sorryToSeeYouGo.php" method="post" onsubmit="return validate(['fname', 'lname', 'email'], 'errorMsgUnSub')">
+                <form action="sorryToSeeYouGo.php" method="post" onsubmit="return validate(['email', 'none'], 'errorMsgUnSub')">
                     <h2>I hate everything and would like to unsubscribe!<br>
                     Enter your email to unsubscribe.</h2>
                     <div class="col-sm-10">
