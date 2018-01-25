@@ -51,27 +51,5 @@ if ($action == 'list_products') {
         add_product($category_id, $code, $name, $price);
         header("Location: .?category_id=$category_id");
     }
-} else if ($action == 'list_categories'){
-    $categories = get_categories()->fetchAll();
-    include('category_list.php');
-} else if ($action == 'add_category'){
-    $categoryName = filter_input(INPUT_POST, 'name');
-    if ($categoryName == null) {
-        $error = "Invalid product data. Check all fields and try again.";
-        include('../errors/error.php');
-    } else {
-        add_category($categoryName);
-        header("Location: .?action=list_categories");
-    }
-} else if ($action == 'delete_category'){
-    $categoryId = filter_input(INPUT_POST, 'category_id',
-        FILTER_VALIDATE_INT);
-    if ($categoryId == NULL) {
-        $error = "Invalid product data. Check all fields and try again.";
-        include('../errors/error.php');
-    } else {
-        delete_category($categoryId);
-        header("Location: .?action=list_categories");
-    }
-}
+}    
 ?>
