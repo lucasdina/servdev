@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfbf75c4-de26-4de8-aeaa-f8c62f8a022d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/ex_starts/ch05_ex1/model/category_db.php" afterPath="$PROJECT_DIR$/ex_starts/ch05_ex1/model/category_db.php" />
-      <change beforePath="$PROJECT_DIR$/ex_starts/ch05_ex1/product_manager/category_list.php" afterPath="$PROJECT_DIR$/ex_starts/ch05_ex1/product_manager/category_list.php" />
-      <change beforePath="$PROJECT_DIR$/ex_starts/ch05_ex1/product_manager/index.php" afterPath="$PROJECT_DIR$/ex_starts/ch05_ex1/product_manager/index.php" />
+      <change beforePath="$PROJECT_DIR$/ex_starts/ch07_ex1/display_results.php" afterPath="$PROJECT_DIR$/ex_starts/ch07_ex1/display_results.php" />
+      <change beforePath="$PROJECT_DIR$/ex_starts/ch07_ex1/index.php" afterPath="$PROJECT_DIR$/ex_starts/ch07_ex1/index.php" />
+      <change beforePath="$PROJECT_DIR$/ex_starts/ch08_ex1/index.php" afterPath="$PROJECT_DIR$/ex_starts/ch08_ex1/index.php" />
       <change beforePath="$PROJECT_DIR$/../mysql" afterPath="$PROJECT_DIR$/../mysql" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,67 +52,27 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ex_starts/ch06_ex4_lab/index.php">
+        <entry file="file://$PROJECT_DIR$/ex_starts/ch07_ex1/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="37" lean-forward="false" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+            <state relative-caret-position="561">
+              <caret line="39" column="55" lean-forward="false" selection-start-line="39" selection-start-column="55" selection-end-line="39" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="category_db.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ex_starts/ch05_ex1/model/category_db.php">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ex_starts/ch08_ex1/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="42" column="30" lean-forward="false" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
-              <folding>
-                <marker date="1516772349186" expanded="true" signature="64:122" ph="SELECT * FRO... categories" />
-                <marker date="1516772349186" expanded="true" signature="294:364" ph="SELECT * FRO... categories" />
-                <marker date="1516772349186" expanded="true" signature="717:826" ph="INSERT INTO categories... " />
-                <marker date="1516772349186" expanded="true" signature="1060:1128" ph="DELETE FROM categories... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ex_starts/ch06_ex4_lab/product_manager/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="187">
+              <caret line="26" column="39" lean-forward="true" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ex_starts/ch06_ex4_lab/model/database.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="55" lean-forward="false" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="product_db.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ex_starts/ch06_ex4_lab/model/product_db.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="37" lean-forward="false" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
-              <folding>
-                <marker date="1516847487415" expanded="true" signature="86:196" ph="SELECT * FRO... products" />
-                <marker date="1516847487415" expanded="true" signature="484:550" ph="SELECT * FRO... products" />
-                <marker date="1516847487415" expanded="true" signature="834:898" ph="DELETE FROM products... " />
-                <marker date="1516847487415" expanded="true" signature="1183:1345" ph="INSERT INTO products... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ex_starts/ch05_ex1/model/database.php">
+      <file leaf-file-name="display_results.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ex_starts/ch07_ex1/display_results.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -175,6 +135,9 @@
         <option value="$PROJECT_DIR$/ex_starts/ch06_ex4_lab/index.php" />
         <option value="$PROJECT_DIR$/ex_starts/ch06_ex4_lab/model/database.php" />
         <option value="$PROJECT_DIR$/ex_starts/ch06_ex4_lab/model/product_db.php" />
+        <option value="$PROJECT_DIR$/ex_starts/ch07_ex1/index.php" />
+        <option value="$PROJECT_DIR$/ex_starts/ch07_ex1/display_results.php" />
+        <option value="$PROJECT_DIR$/ex_starts/ch08_ex1/index.php" />
       </list>
     </option>
   </component>
@@ -224,54 +187,7 @@
               <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
               <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="ex_starts" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="ch04_ex1" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="ex_starts" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="ch05_ex1" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="ex_starts" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="ch05_ex1" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="model" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="ex_starts" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="ch05_ex1" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="product_manager" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="ex_starts" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="ch06_ex4_lab" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="ex_starts" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="ch06_ex4_lab" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="model" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="ex_starts" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="ch06_ex4_lab" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="product_catalog" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="ex_starts" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="ch06_ex4_lab" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="product_manager" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="ch08_ex1" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
@@ -343,18 +259,18 @@
       <option name="presentableId" value="Default" />
       <updated>1516230539521</updated>
       <workItem from="1516230540873" duration="668000" />
-      <workItem from="1516231901202" duration="41457000" />
+      <workItem from="1516231901202" duration="47686000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42125000" />
+    <option name="totallyTimeSpent" value="48354000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.111979164" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1279762" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -819,14 +735,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ex_starts/ch05_ex1/model/category_db.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="30" lean-forward="false" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+        <state relative-caret-position="119">
+          <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
           <folding>
             <marker date="1516772349186" expanded="true" signature="64:122" ph="SELECT * FRO... categories" />
             <marker date="1516772349186" expanded="true" signature="294:364" ph="SELECT * FRO... categories" />
             <marker date="1516772349186" expanded="true" signature="717:826" ph="INSERT INTO categories... " />
             <marker date="1516772349186" expanded="true" signature="1060:1128" ph="DELETE FROM categories... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ex_starts/ch07_ex1/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="39" column="55" lean-forward="false" selection-start-line="39" selection-start-column="55" selection-end-line="39" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ex_starts/ch07_ex1/display_results.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ex_starts/ch08_ex1/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="26" column="39" lean-forward="true" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
