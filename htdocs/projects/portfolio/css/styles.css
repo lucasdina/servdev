@@ -3,6 +3,12 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
+table { border-collapse: collapse; }
+tr { border: none; }
+td {
+    border-right: solid 1px #f00;
+    border-left: solid 1px #f00;
+}
 
 .nav ul {
     list-style: none;
@@ -101,3 +107,4 @@ img {
 .links{
     padding: 30px;
 }
+
