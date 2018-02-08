@@ -1,8 +1,9 @@
 <?php
 // Start session management with a persistent cookie
-$lifetime = 60 * 60 * 24 * 14;    // 2 weeks in seconds
+$lifetime = 60*60*24*365*3;    // 3 years in seconds
 session_set_cookie_params($lifetime, '/');
 session_start();
+echo "<p>Session ID: ".session_id()."</p>";
 
 // Create a cart array if needed
 if (empty($_SESSION['cart'])) { $_SESSION['cart'] = array(); }
@@ -49,8 +50,11 @@ switch($action) {
         include('add_item_view.php');
         break;
     case 'empty_cart':
-        unset($_SESSION['cart12']);
-        include('cart_view.php');
+        session_destroy();
+        session_start();
+        session_regenerate_id();
+        unset($_SESSION['cart']);
+        header("Refresh:0; url=index.php?action=show_cart");
         break;
 }
 ?>

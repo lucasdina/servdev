@@ -21,11 +21,11 @@
 
         <!-- part 2: the tasks -->
         <h2>Tasks</h2>
-        <?php if (count($task_list) == 0) : ?>
+        <?php if (count($_SESSION['tasklist']) == 0) : ?>
             <p>There are no tasks in the task list.</p>
         <?php else: ?>
             <ul>
-            <?php foreach($task_list as $id => $task) : ?>
+            <?php foreach($_SESSION['tasklist'] as $id => $task) : ?>
                 <li><?php echo $id + 1 . '. ' . $task; ?></li>
             <?php endforeach; ?>
             </ul>
@@ -35,9 +35,6 @@
         <!-- part 3: the add form -->
         <h2>Add Task</h2>
         <form action="." method="post" >
-            <?php foreach($task_list as $task) : ?>
-              <input type="hidden" name="tasklist[]" value="<?php echo $task; ?>">
-            <?php endforeach; ?>
             <input type="hidden" name="action" value="add">
             <label>Task:</label>
             <input type="text" name="newtask" id="newtask" > <br>
@@ -47,16 +44,16 @@
         <br>
 
         <!-- part 4: the delete form -->
-        <?php if (count($task_list) > 0) : ?>
+        <?php if (count($_SESSION['tasklist']) > 0) : ?>
         <h2>Delete Task</h2>
         <form action="." method="post" >
-            <?php foreach($task_list as $task) : ?>
-              <input type="hidden" name="tasklist[]" value="<?php echo $task; ?>">
-            <?php endforeach; ?>
+<!--            --><?php //foreach($task_list as $task) : ?>
+<!--              <input type="hidden" name="tasklist[]" value="--><?php //echo $task; ?><!--">-->
+<!--            --><?php //endforeach; ?>
             <input type="hidden" name="action" value="delete">
             <label>Task:</label>
             <select name="taskid">
-                <?php foreach($task_list as $id => $task) : ?>
+                <?php foreach($_SESSION['tasklist'] as $id => $task) : ?>
                     <option value="<?php echo $id; ?>">
                         <?php echo $task; ?>
                     </option>
