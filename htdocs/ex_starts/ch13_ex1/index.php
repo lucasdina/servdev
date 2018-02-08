@@ -8,6 +8,11 @@ session_start();
 // Create a cart array if needed
 if (empty($_SESSION['cart13'])) $_SESSION['cart13'] = array();
 $cart = $_SESSION['cart13'];
+
+function updateCart(){
+    $cart = $_SESSION['cart13'];
+}
+
 // Create a table of products
 $products = array();
 $products['MMS-1754'] = array('name' => 'Flute', 'cost' => '149.50');
