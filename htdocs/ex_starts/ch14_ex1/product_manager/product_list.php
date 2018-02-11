@@ -17,6 +17,7 @@
         </nav>
     </aside>
     <section>
+        <?php if($products): ?>
         <!-- display a table of products -->
         <h2><?php echo $current_category->getName(); ?></h2>
         <table>
@@ -44,6 +45,9 @@
                 </form></td>
             </tr>
             <?php endforeach; ?>
+            <?php else : ?>
+            <h3>There is no data to display.</h3>
+            <?php endif ?>
         </table>
         <p><a href="?action=show_add_form">Add Product</a></p>
     </section>

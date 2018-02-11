@@ -5,6 +5,7 @@ require('../model/category_db.php');
 require('../model/product.php');
 require('../model/product_db.php');
 
+$cdb = new CategoryDB();
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
@@ -21,8 +22,8 @@ if ($action == 'list_products') {
     }
 
     // Get product and category data
-    $current_category = CategoryDB::getCategory($category_id);
-    $categories = CategoryDB::getCategories();
+    $current_category = $cdb->getCategory($category_id);
+    $categories = $cdb->getCategories();
     $products = ProductDB::getProductsByCategory($category_id);
 
     // Display the product list
@@ -40,7 +41,7 @@ if ($action == 'list_products') {
     // Display the Product List page for the current category
     header("Location: .?category_id=$category_id");
 } else if ($action == 'show_add_form') {
-    $categories = CategoryDB::getCategories();
+    $categories = $cdb->getCategories();
     include('product_add.php');
 } else if ($action == 'add_product') {
     $category_id = filter_input(INPUT_POST, 'category_id', 
@@ -53,7 +54,7 @@ if ($action == 'list_products') {
         $error = "Invalid product data. Check all fields and try again.";
         include('../errors/error.php');
     } else {
-        $current_category = CategoryDB::getCategory($category_id);
+        $current_category = $cdb->getCategory($category_id);
         $product = new Product($current_category, $code, $name, $price);
         ProductDB::addProduct($product);
 

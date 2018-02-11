@@ -1,6 +1,6 @@
 <?php
 // Add an item to the cart
-function add_item($cart, $key, $quantity) {
+function add_item(&$cart, $key, $quantity) {
     global $products;
     if ($quantity < 1) return;
 
@@ -24,7 +24,7 @@ function add_item($cart, $key, $quantity) {
 }
 
 // Update an item in the cart
-function update_item($cart, $key, $quantity) {
+function update_item(&$cart, $key, $quantity) {
     $quantity = (int) $quantity;
     if (isset($cart[$key])) {
         if ($quantity <= 0) {
@@ -40,12 +40,12 @@ function update_item($cart, $key, $quantity) {
 }
 
 // Get cart subtotal
-function get_subtotal ($cart) {
+function get_subtotal ($cart, $decimals = 2) {
     $subtotal = 0;
-    foreach ($_SESSION['cart13'] as $item) {
+    foreach ($cart as $item) {
         $subtotal += $item['total'];
     }
-    $subtotal_f = number_format($subtotal, 2);
+    $subtotal_f = number_format($subtotal, $decimals);
     return $subtotal_f;
 }
 ?>

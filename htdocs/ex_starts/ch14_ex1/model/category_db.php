@@ -1,6 +1,6 @@
 <?php
 class CategoryDB {
-    public static function getCategories() {
+    public function getCategories() {
         $db = Database::getDB();
         $query = 'SELECT * FROM categories
                   ORDER BY categoryID';
@@ -9,14 +9,15 @@ class CategoryDB {
         
         $categories = array();
         foreach ($statement as $row) {
-            $category = new Category($row['categoryID'],
-                                     $row['categoryName']);
+            $category = new Category();
+            $category->setID($row['categoryID']);
+            $category->setName($row['categoryName']);
             $categories[] = $category;
         }
         return $categories;
     }
 
-    public static function getCategory($category_id) {
+    public function getCategory($category_id) {
         $db = Database::getDB();
         $query = 'SELECT * FROM categories
                   WHERE categoryID = :category_id';    
@@ -24,9 +25,10 @@ class CategoryDB {
         $statement->bindValue(':category_id', $category_id);
         $statement->execute();    
         $row = $statement->fetch();
-        $statement->closeCursor();    
-        $category = new Category($row['categoryID'],
-                                 $row['categoryName']);
+        $statement->closeCursor();
+        $category = new Category();
+        $category->setID($row['categoryID']);
+        $category->setName($row['categoryName']);
         return $category;
     }
 }
