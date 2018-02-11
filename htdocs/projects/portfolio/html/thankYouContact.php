@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <?php
-    $email = $_POST['email'];
-    $org = $_POST['org'];
-    $message = $_POST['message'];
+    include('../db/DBFeedback.php');
 
-    $servername = 'localhost';
-    $username = 'projectone_admin';
-    $passwd = '1qazxsw2';
-    $dbname = 'project1';
-
-    $link = mysqli_connect($servername, $username, $passwd, $dbname);
-    if($link->connect_error){
-        die('Not connected : '.$link->connect_error);
-    }
-    $query = "INSERT INTO feedbackrequests (userEmail, userOrganization, message) VALUES('$email','$org','$message')";
-    $result = $link->query($query);
-
-    $csrequest = "SELECT * FROM servicespecialists ORDER BY rand() LIMIT 1";
-    $response = $link ->query($csrequest);
-    $csspecialist = 'Lucas Dina';
-    if($response->num_rows >0){
-        while($row = $response->fetch_assoc()){
-            $csspecialist = $row['fname'].' '.$row['lname'];
-        }
-    }
+    sendFeedback($_POST['email'], $_POST['org'], $_POST['message']);
+    $csspecialist = getServiceSpecialist();
 
     ?>
 </head>

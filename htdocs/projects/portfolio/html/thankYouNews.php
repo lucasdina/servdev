@@ -10,28 +10,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <?php
-    $fname = $_POST['fname'];
-    $lname = $_POST['lname'];
-    $email = $_POST['email'];
-
-    $servername = 'localhost';
-    $username = 'projectone_admin';
-    $passwd = '1qazxsw2';
-    $dbname = 'project1';
-
-    $link = mysqli_connect($servername, $username, $passwd, $dbname);
-    if($link->connect_error){
-        die('Not connected : '.$link->connect_error);
-    }
-
-    $query = "INSERT INTO newslettersubscribers (fname, lname, email) VALUES ('$fname', '$lname', '$email')";
-    $response = $link->query($query);
-
-    if (!$response){
-        $message = 'Invalid query: '. mysql_error(). '/n';
-        $message .= 'Whole query: '. $query;
-        die($message);
-    }
+    include ('../db/DBNewsletter.php');
+    addUserToNewsLetter($_POST['fname'], $_POST['lname'], $_POST['email']);
     ?>
 </head>
 
@@ -49,7 +29,7 @@
 </div>
 <main>
     <div id="mainText">
-        <h1>Thank you for signing up for our weekly news letter, <?php echo $fname; ?>. We look forward to spamming your inbox with emails!</h1>
+        <h1>Thank you for signing up for our weekly news letter, <?php echo $_POST['fname']; ?>. We look forward to spamming your inbox with emails!</h1>
     </div>
 </main>
 </body>

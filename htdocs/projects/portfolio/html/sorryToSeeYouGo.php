@@ -11,34 +11,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <?php
-    $email = $_POST['email'];
-
-    $servername = 'localhost';
-    $username = 'projectone_admin';
-    $passwd = '1qazxsw2';
-    $dbname = 'project1';
-
-    $link = mysqli_connect($servername, $username, $passwd, $dbname);
-    if($link->connect_error){
-        die('Not connected : '.$link->connect_error);
-    }
-
-    $subName = null;
-    $query0 = "SELECT fname FROM newslettersubscribers WHERE email = '$email'";
-    $response = $link ->query($query0);
-    if($response->num_rows >0){
-        while($row = $response->fetch_assoc()){
-            $subName = $row['fname'];
-        }
-    }
-
-    $query = "DELETE * FROM newslettersubscribers WHERE email = '$email'";
-    $response0 = $link ->query($query);
-    if (!$response){
-        $message = 'Invalid query: '. mysql_error(). '/n';
-        $message .= 'Whole query: '. $query;
-        die($message);
-    }
+    include ('../db/DBNewsletter.php');
+    $subName = removeUserFromEmailList($_POST['email']);
     ?>
 
 

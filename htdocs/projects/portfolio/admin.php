@@ -11,28 +11,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <?php
-    //db credentials
-    $servername = 'localhost';
-    $username = 'projectone_admin';
-    $passwd = '1qazxsw2';
-    $dbname = 'project1';
+    include ('./db/DBAdmin.php');
 
-    //Creating db link
-    $link = mysqli_connect($servername, $username, $passwd, $dbname);
-    if($link->connect_error){
-        die('Not connected : '.$link->connect_error);
-    }
-
-
-    //creating db query
-    $query0 = "SELECT * FROM feedbackrequests ";
-    $response = $link ->query($query0);
-    while($row = $response->fetch_array(MYSQLI_BOTH))
-    {
-        //Converting the response to an array of arrays
-        $rows[] = $row;
-    }
-    $feedbackArray = $rows;
+    $feedbackArray = getFeedbackRequests();
 
     ?>
 
