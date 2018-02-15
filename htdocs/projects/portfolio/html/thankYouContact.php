@@ -13,8 +13,13 @@
     <?php
     include('../db/DBFeedback.php');
 
-    sendFeedback($_POST['email'], $_POST['org'], $_POST['message']);
-    $csspecialist = getServiceSpecialist();
+    if(sendFeedback($_POST['email'], $_POST['org'], $_POST['message'])) {
+        $csspecialist = getServiceSpecialist();
+    } else {
+        echo "<script>alert('Unable to submit your message.');</script>";
+        include("contact.php");
+        exit;
+    }
 
     ?>
 </head>

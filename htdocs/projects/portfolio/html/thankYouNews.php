@@ -11,7 +11,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <?php
     include ('../db/DBNewsletter.php');
-    addUserToNewsLetter($_POST['fname'], $_POST['lname'], $_POST['email']);
+    if(!addUserToNewsLetter($_POST['fname'], $_POST['lname'], $_POST['email'])){
+        echo "<script>alert('Unable to add user to news letter subscriber list.');</script>";
+        include("news.php");
+        exit;
+    }
     ?>
 </head>
 

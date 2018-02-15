@@ -32,6 +32,11 @@
                value="<?php echo htmlspecialchars($lastName);?>">
         <?php echo $fields->getField('last_name')->getHTML(); ?><br>
 
+        <label>Date of Birth:</label>
+        <input type="text" name="birthday"
+               value="<?php echo htmlspecialchars($birthday);?>">
+        <?php echo $fields->getField('birthday')->getHTML(); ?><br>
+
         <label>Address:</label>
         <input type="text" name="address" 
                value="<?php echo htmlspecialchars($address);?>">

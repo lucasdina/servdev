@@ -12,7 +12,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <?php
     include ('../db/DBNewsletter.php');
-    $subName = removeUserFromEmailList($_POST['email']);
+    if(!$subName = removeUserFromEmailList($_POST['email'])){
+        echo "<script>alert('Unable to remove you from our news letter subscriber list.');</script>";
+        include("news.php");
+        exit;
+    }
     ?>
 
 

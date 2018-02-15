@@ -146,33 +146,20 @@ class Validate {
             return;
         }
 
-        $this->text($name, $password, $required, 6);
+        $this->text($name, $password, $required, 8);
         if ($field->hasError()) { return; }
 
-        // Patterns to validate password
-        $charClasses = array();
-        $charClasses[] = '[:digit:]';
-        $charClasses[] = '[:upper:]';
-        $charClasses[] = '[:lower:]';
-        $charClasses[] = '_-';
-
-        $pw = '/^';
-        $valid = '[';
-        foreach($charClasses as $charClass) {
-            $pw .= '(?=.*[' . $charClass . '])';
-            $valid .= $charClass;
+        $pwMatch = preg_match('/[A-Z]/', $password);
+        if($pwMatch) {
+            $pwMatch = preg_match('/[0-9]/', $password);
         }
-        $valid .= ']{6,}';
-        $pw .= $valid . '$/';
-
-        $pwMatch = preg_match($pw, $password);
 
         if ($pwMatch === false) {
             $field->setErrorMessage('Error testing password.');
             return;
         } else if ($pwMatch != 1) {
             $field->setErrorMessage(
-                    'Must have one each of upper, lower, digit, and "-_".');
+                    'Must contain at lease one uppercase letter and one digit.');
             return;
         }
     }
@@ -202,7 +189,7 @@ class Validate {
             'VT', 'VA', 'WA', 'WV', 'WI', 'WY');
         $states = implode('|', $states);
         $pattern = '/^(' . $states . ')$/';
-        $this->pattern($name, $value, $pattern,
+        $this->pattern($name, strtoupper($value), $pattern,
                 'Invalid state.', $required);
     }
 
@@ -336,6 +323,32 @@ class Validate {
         $now = new \DateTime();
         if ( $exp < $now ) {
             $field->setErrorMessage('Card has expired.');
+            return;
+        }
+        $field->clearErrorMessage();
+    }
+
+    public function date($name, $value) {
+        $field = $this->fields->getField($name);
+        $datePattern = '/^\d{2}\/\d{2}\/\d{4}$/';
+        $match = preg_match($datePattern, $value);
+        if ( $match === false ) {
+            $field->setErrorMessage('Error testing field.');
+            return;
+        }
+        if ( $match != 1 ) {
+            $field->setErrorMessage('Invalid date format. MM/DD/YYYY');
+            return;
+        }
+        $dateParts = explode('/', $value);
+        $month = $dateParts[0];
+        $day = $dateParts[1];
+        $year  = $dateParts[2];
+        $dateString = $month . '/'.$day.'/' . $year;
+        $exp = new \DateTime($dateString);
+        $now = new \DateTime();
+        if ( $exp >= $now ) {
+            $field->setErrorMessage('Birthday cannot be on or after today.');
             return;
         }
         $field->clearErrorMessage();

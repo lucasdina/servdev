@@ -9,6 +9,7 @@ $fields->addField('password', 'Must be at least 6 characters.');
 $fields->addField('verify');
 $fields->addField('first_name');
 $fields->addField('last_name');
+$fields->addField('birthday');
 $fields->addField('address');
 $fields->addField('city');
 $fields->addField('state', 'Use 2 character abbreviation.');
@@ -32,6 +33,7 @@ switch ($action) {
         $verify = '';
         $firstName = '';
         $lastName = '';
+        $birthday = '';
         $address = '';
         $city = '';
         $state = '';
@@ -51,6 +53,7 @@ switch ($action) {
         $verify = filter_input(INPUT_POST, 'verify');
         $firstName = trim(filter_input(INPUT_POST, 'first_name'));
         $lastName = trim(filter_input(INPUT_POST, 'last_name'));
+        $birthday = trim(filter_input(INPUT_POST, 'birthday'));
         $address = trim(filter_input(INPUT_POST, 'address'));
         $city = trim(filter_input(INPUT_POST, 'city'));
         $state = filter_input(INPUT_POST, 'state');
@@ -67,6 +70,7 @@ switch ($action) {
         $validate->verify('verify', $password, $verify);
         $validate->text('first_name', $firstName);
         $validate->text('last_name', $lastName);
+        $validate->date('birthday', $birthday);
         $validate->text('address', $address);
         $validate->text('city', $city);
         $validate->state('state', $state);
